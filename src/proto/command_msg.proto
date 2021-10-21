@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+message Command{
+    enum Type{
+        Calculator = 0;
+        Solver = 1;
+    }
+    repeated Type type = 1;
+    repeated string varname = 2;
+    repeated string stringVal = 3;
+}
+
+message CalculationResult{
+    repeated double result = 1;
+    repeated bool success = 2;
+    repreated string err_msg = 3;
+}
